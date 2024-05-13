@@ -51,8 +51,13 @@ public extension IQKeyboardManagerWrapper where Base: UIView {
             return unwrappedToolbar
         } else {
 
-            let width: CGFloat = base.window?.windowScene?.screen.bounds.width ?? 0
-
+            var width:CGFloat = 0
+            if #available(iOS 13.0, *) {
+                width = base.window?.windowScene?.screen.bounds.width ?? 0
+            }else{
+                width = UIScreen.main.bounds.width
+            }
+            
             let frame = CGRect(origin: .zero, size: .init(width: width, height: 44))
             let newToolbar = IQToolbar(frame: frame)
 

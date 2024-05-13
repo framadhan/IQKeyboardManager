@@ -185,7 +185,11 @@ public extension IQKeyboardManager {
         if let navigationController: UINavigationController = rootController.navigationController {
             navigationBarAreaHeight = navigationController.navigationBar.frame.maxY
         } else {
-            statusBarHeight = window.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+            if #available(iOS 13, *) {
+                statusBarHeight = window.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+            } else {
+                statusBarHeight = UIApplication.shared.statusBarFrame.height
+            }
             navigationBarAreaHeight = statusBarHeight
         }
 

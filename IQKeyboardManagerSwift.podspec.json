@@ -13,7 +13,7 @@
         "Iftekhar Qurashi": "hack.iftekhar@gmail.com"
     },
     "platforms": {
-        "ios": "13.0"
+        "ios": "12.0"
     },
     "swift_versions": [
         "5.5",
@@ -23,7 +23,9 @@
         "5.9"
     ],
     "source_files": "IQKeyboardManagerSwift/**/*.{swift}",
-    "resource_bundles": {"IQKeyboardManagerSwift": "IQKeyboardManagerSwift/PrivacyInfo.xcprivacy"},
+    "resource_bundles": {
+        "IQKeyboardManagerSwift": "IQKeyboardManagerSwift/PrivacyInfo.xcprivacy"
+    },
     "frameworks": [
         "UIKit",
         "Foundation",

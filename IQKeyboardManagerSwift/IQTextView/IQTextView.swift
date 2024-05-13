@@ -73,7 +73,13 @@ import UIKit
         label.textAlignment = self.textAlignment
         label.backgroundColor = UIColor.clear
         label.isAccessibilityElement = false
-        label.textColor = UIColor.placeholderText
+        
+        if #available(iOS 13.0, *) {
+            label.textColor = UIColor.placeholderText
+        } else {
+            label.textColor = UIColor.systemGray
+            // Fallback on earlier versions
+        }
         label.alpha = 0
         self.addSubview(label)
 
